@@ -1,5 +1,6 @@
 {
 	"name" : "werdnum/simple-lightncandy",
+	"description" : "No-nonsense templating with lightncandy",
     "require": {
         "zordius/lightncandy": "~0.18"
     }
