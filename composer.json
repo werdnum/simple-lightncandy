@@ -3,5 +3,8 @@
 	"description" : "No-nonsense templating with lightncandy",
     "require": {
         "zordius/lightncandy": "~0.18"
+    },
+    "autoload" : {
+    	"classmap" : ["SimpleLightNCandy.php"]
     }
 }
