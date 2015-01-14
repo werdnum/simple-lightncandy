@@ -1,4 +1,5 @@
 {
+	"name" : "werdnum/simple-lightncandy",
     "require": {
         "zordius/lightncandy": "~0.18"
     }
