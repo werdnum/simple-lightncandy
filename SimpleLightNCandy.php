@@ -22,6 +22,13 @@ class SimpleLightNCandy {
 		return $renderFunction( $input );
 	}
 
+	public function renderString( $templateStr, array $input ) {
+		$phpStr = LightnCandy::compile( $templateStr, $this->getCompileOptions() );
+		$renderFunction = LightnCandy::prepare( $phpStr );
+
+		return $renderFunction( $input );
+	}
+
 	public function getTemplate( $templateName ) {
 		if ( ! isset( $this->templates[$templateName] ) ) {
 			$phpFile = $this->basePath . $templateName . '.php';
