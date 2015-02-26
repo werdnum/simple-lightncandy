@@ -41,6 +41,10 @@ class SimpleLightNCandy {
 				if ( ! file_exists( $templateFile ) ) {
 					throw new TemplatingException( "Unable to load $templateName from $templateFile" );
 				}
+				if ( ! is_writable( $phpFile ) ) {
+					throw new TemplatingException( "$phpFile is not writable" );
+				}
+
 				$templateStr = file_get_contents( $templateFile );
 				$phpStr = LightnCandy::compile( $templateStr, $this->getCompileOptions() );
 				file_put_contents( $phpFile, $phpStr );
