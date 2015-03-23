@@ -58,7 +58,7 @@ class SimpleLightNCandy {
 	protected function getCompileOptions() {
 		return array(
 			'flags' => LightnCandy::FLAG_STANDALONE |
-				LightnCandy::FLAG_SP_VARS |
+				LightnCandy::FLAG_SPVARS |
 				LightnCandy::FLAG_MUSTACHE |
 				LightnCandy::FLAG_ERROR_EXCEPTION,
 			'basedir' => array(
