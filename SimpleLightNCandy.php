@@ -22,6 +22,13 @@ class SimpleLightNCandy {
 		return $renderFunction( $input );
 	}
 
+	public function renderString( $templateStr, array $input ) {
+		$phpStr = LightnCandy::compile( $templateStr, $this->getCompileOptions() );
+		$renderFunction = LightnCandy::prepare( $phpStr );
+
+		return $renderFunction( $input );
+	}
+
 	public function getTemplate( $templateName ) {
 		if ( ! isset( $this->templates[$templateName] ) ) {
 			$phpFile = $this->basePath . $templateName . '.php';
@@ -34,6 +41,10 @@ class SimpleLightNCandy {
 				if ( ! file_exists( $templateFile ) ) {
 					throw new TemplatingException( "Unable to load $templateName from $templateFile" );
 				}
+				if ( ! is_writable( $phpFile ) ) {
+					throw new TemplatingException( "$phpFile is not writable" );
+				}
+
 				$templateStr = file_get_contents( $templateFile );
 				$phpStr = LightnCandy::compile( $templateStr, $this->getCompileOptions() );
 				file_put_contents( $phpFile, $phpStr );
@@ -60,7 +71,8 @@ class SimpleLightNCandy {
 			'flags' => LightnCandy::FLAG_STANDALONE |
 				LightnCandy::FLAG_SPVARS |
 				LightnCandy::FLAG_MUSTACHE |
-				LightnCandy::FLAG_ERROR_EXCEPTION,
+				LightnCandy::FLAG_ERROR_EXCEPTION |
+				LightnCandy::FLAG_SPVARS,
 			'basedir' => array(
 				$this->basePath,
 			),
