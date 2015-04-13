@@ -1,7 +1,5 @@
 <?php
 
-require "vendor/autoload.php";
-
 class SimpleLightNCandy {
 	protected $templates = array();
 	protected $basePath = '';
