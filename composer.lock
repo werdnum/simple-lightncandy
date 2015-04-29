@@ -7,7 +7,7 @@
     "packages": [
         {
             "name": "zordius/lightncandy",
-            "version": "v0.18",
+            "version": "v0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zordius/lightncandy.git",
