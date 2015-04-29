@@ -2,7 +2,7 @@
 	"name" : "werdnum/simple-lightncandy",
 	"description" : "No-nonsense templating with lightncandy",
     "require": {
-        "zordius/lightncandy": "~0.18"
+        "zordius/lightncandy": "~0.20"
     },
     "autoload" : {
     	"classmap" : ["SimpleLightNCandy.php"]
