@@ -59,6 +59,7 @@ class SimpleLightNCandy {
 		return array(
 			'flags' => LightnCandy::FLAG_STANDALONE |
 				LightnCandy::FLAG_SPVARS |
+				LightnCandy::FLAG_THIS |
 				LightnCandy::FLAG_MUSTACHE |
 				LightnCandy::FLAG_ERROR_EXCEPTION,
 			'basedir' => array(
